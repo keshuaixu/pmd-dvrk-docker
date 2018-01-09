@@ -4,5 +4,9 @@ services:
     build: .
     volumes:
       - ./pmd-dvrk:/root/pmd-dvrk
+      - $HOME/.Xauthority:/root/.Xauthority
     stdin_open: true
+    environment:
+      - DISPLAY=unix:0
     tty: true
+    network_mode: "host"
